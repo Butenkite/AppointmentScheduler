@@ -6,24 +6,25 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="/confirmation" method="post"></form>
-    <fieldset>
-        <legend>Contact Info</legend>
+    <form action="/confirmation" method="post">
+        <fieldset>
+            <legend>Contact Info</legend>
+            
+            <label>First Name: 
+                <input type="text" name="fname">
+            </label>
         
-        <label>First Name: 
-            <input type="text" name="fname">
-        </label>
-    
-        <label>Last Name: 
-            <input type="text" name="lname">
-        </label>
+            <label>Last Name: 
+                <input type="text" name="lname">
+            </label>
 
-        <label>choose a time and date: 
-            <input type="date" name="Date">
-            <input type="time" name="Time">
-        </label>
+            <label>choose a time and date: 
+                <input type="date" name="Date">
+                <input type="time" name="Time">
+            </label>
 
-        <button id = "submitButton" name = "submitButton">Submit</button>
-
+            <button id = "submitButton" name = "submitButton">Submit</button>
+        </fieldset>
+    </form>
 </body>
 </html>
