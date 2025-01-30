@@ -26,7 +26,7 @@ app.post('/confirmation', (req, res) =>{
     let hour = d.getHours();
     appointments.push(req.body);
     appointments.push(`Timestamp: ${hour + ":" + minutes}`);
-    res.send(appointments);
+    res.sendFile(`${import.meta.dirname}/views/confirm.html`)
     console.log(appointments);
 });
 
