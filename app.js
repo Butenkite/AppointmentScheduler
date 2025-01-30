@@ -23,14 +23,16 @@ app.get('/', (req, res) =>{
 // confirmation
 app.post('/confirmation', (req, res) =>{
     let minutes = d.getMinutes();
+    let hour = d.getHours();
     appointments.push(req.body);
-    appointments.push(`Time: ${minutes}`);
-    res.send(req.body);
-    console.log(req.body);
+    appointments.push(`Timestamp: ${hour + ":" + minutes}`);
+    res.send(appointments);
+    console.log(appointments);
 });
 
 app.get('/admin/appointments', (req, res) =>{
     res.send(appointments);
+    console.log(appointments);
 });
 
 // listen to PORT
