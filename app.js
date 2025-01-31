@@ -12,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 const PORT = 3000;
 
 // store data
-const d = new Date();
+
 const appointments = [];
 // home page
 app.get('/', (req, res) =>{
@@ -22,11 +22,18 @@ app.get('/', (req, res) =>{
 
 // confirmation
 app.post('/confirmation', (req, res) =>{
+    
+    //pushing data from form
+    appointments.push(req.body);
+
+    //timestamp
+    const d = new Date();
     let minutes = d.getMinutes();
     let hour = d.getHours();
-    appointments.push(req.body);
     appointments.push(`Timestamp: ${hour + ":" + minutes}`);
+    //send user to confirmation page
     res.sendFile(`${import.meta.dirname}/views/confirm.html`)
+    
     console.log(appointments);
 });
 
@@ -38,4 +45,4 @@ app.get('/admin/appointments', (req, res) =>{
 // listen to PORT
 app.listen(PORT, () =>{
     console.log(`server is running at http://localhost:${PORT}`);
-})
+});
